@@ -49,7 +49,7 @@ export default function Login({getuser}) {
                 <title>Home</title>
             </Helmet>
    <div className="layer p-5">
-   <div className="w-50 m-auto py-5  ">
+   <div className="w-md-50  m-auto py-5  ">
     {ApiError?<div className='alert alert-info'><h5>{ApiError}</h5></div>:''}
       
      <div className='mt-5 p-4  border border-1 rounded-4 shadow '>

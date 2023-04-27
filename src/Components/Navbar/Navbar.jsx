@@ -10,7 +10,7 @@ export default function Navbar({user,logout}) {
   },[])
   return (
    <>
-   <nav className="navbar navbar-expand-sm navbar-light fixed-top bg-light ">
+   <nav className="navbar navbar-expand-md navbar-light fixed-top bg-light ">
       <div className="container">
       <Link className="navbar-brand " to="/">
         <img src={logo} alt="" />
@@ -35,7 +35,7 @@ export default function Navbar({user,logout}) {
           <li className="nav-item position-relative">
             <Link className="nav-link fs-6 mx-2 fw-bolder" to="cart"><i class="fa-solid fa-cart-shopping fs-5 px-1"></i> <span className='badge text-white bg-main position-absolute top-0'>{num}</span></Link>
           </li>
-          <li className="nav-item position-relative mx-3">
+          <li className="nav-item position-relative ">
             <Link className="nav-link fs-6 mx-2 fw-bolder" ><i class="fa-solid fa-heart fs-5 px-1"></i> <span className='badge text-white bg-main position-absolute top-0'>{numWishlist}</span></Link>
           </li>
         </ul>
@@ -56,7 +56,7 @@ export default function Navbar({user,logout}) {
          </li>
      {user===null?
     <>
-     <li className="nav-item ms-3">
+     <li className="nav-item">
            <Link className="nav-link" to="login"><button className='btn btn-outline-success fw-bold'> signin </button></Link>
          </li>
          <li className="nav-item">

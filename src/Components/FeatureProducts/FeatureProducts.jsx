@@ -76,7 +76,7 @@ AOS.init();
 
   </div>)}
   {products.length===40?"":<div className='d-flex justify-content-center'>
-<button onClick={click} className='border border-1  btn btn-success my-5  py-2 rounded-2'>lead more</button>
+<button onClick={click} className='border border-1  btn btn-success my-5  py-2 rounded-2'>load more</button>
   </div>}
   
    </div>
