@@ -1,9 +1,9 @@
 import React from 'react'
-import style from './Footer.module.css'
+
 export default function Footer() {
   return (
    <>
-   {/* <div className='bg-dark py-3 d-flex justify-content-around fixed-bottom'>
+   <div className='bg-dark py-3 d-flex justify-content-around fixed-bottom'>
     <h6 className='text-main' >Abdel Moneim Khalifa</h6>
     <h6 className='text-main'>Salah Samir </h6>
     <h6 className='text-main'>Muhammed Husam</h6>
@@ -13,7 +13,7 @@ Abdel Mongi Hilal
     <h6 className='text-main'>Hassan Magdy </h6>
 
 
-   </div> */}
+   </div>
    
    
    </>
