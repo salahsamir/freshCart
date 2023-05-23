@@ -5,13 +5,14 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { BaseUrl } from '../../assets/Api.js/BaseUrl.jsx';
 
 export default function Collection() {
   let[details,setDetails]=useState(null)
   let {id}=useParams()
  console.log(id);
   let getdata=async(id)=>{
-  let {data}=  await axios.get(`https://route-ecommerce.onrender.com/api/v1/products/?category=${id}`)
+  let {data}=  await axios.get(`${BaseUrl}/products/?category=${id}`)
   setDetails(data.data)
 
   }

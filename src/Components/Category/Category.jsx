@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Helmet } from 'react-helmet';
+import { BaseUrl } from '../../assets/Api.js/BaseUrl.jsx';
 export default function Category() {
   let[category,setCategory]=useState(null)
 
   let getdata=async()=>{
-  let {data}=  await axios.get(`https://route-ecommerce.onrender.com/api/v1/categories`)
+  let {data}=  await axios.get(`${BaseUrl}/categories`)
   setCategory(data.data)
   }
   useEffect(()=>{

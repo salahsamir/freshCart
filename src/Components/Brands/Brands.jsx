@@ -5,12 +5,13 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { BaseUrl } from '../../assets/Api.js/BaseUrl.jsx';
 export default function Brands() {
   let[brand,setbrand]=useState([])
   let [num,setnum]=useState(16)
 
   let getdata=async()=>{
-  let {data}=  await axios.get(`https://route-ecommerce.onrender.com/api/v1/brands`)
+  let {data}=  await axios.get(`${BaseUrl}/brands`)
   setbrand(data.data)
   }
   useEffect(()=>{

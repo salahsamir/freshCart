@@ -44,7 +44,7 @@ export default function Navbar({user,logout}) {
        
 
        <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
-       <li className="nav-item d-flex align-items-center">
+       {/* <li className="nav-item d-flex align-items-center">
        
           <i className= ' fab mx-2 fa-facebook fs-4'></i>
           <i className= 'fab fs-4 mx-2 fa-twitter'></i>
@@ -53,7 +53,7 @@ export default function Navbar({user,logout}) {
           <i className= 'fab fs-4 mx-2 fa-youtube'></i>
           <i className= 'fab fs-4 mx-2 fa-linkedin'></i>
          
-         </li>
+         </li> */}
      {user===null?
     <>
      <li className="nav-item">

@@ -6,13 +6,14 @@ import axios from 'axios'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Helmet } from 'react-helmet';
+import { BaseUrl } from '../../assets/Api.js/BaseUrl.jsx';
 
 export default function Brand() {
   let[details,setDetails]=useState(null)
   let {id}=useParams()
  console.log(id);
   let getdata=async(id)=>{
-  let {data}=  await axios.get(`https://route-ecommerce.onrender.com/api/v1/products/?brand=${id}`)
+  let {data}=  await axios.get(`${BaseUrl}/products/?brand=${id}`)
   setDetails(data.data)
 
   }

@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { toast } from 'react-hot-toast'
+import { BaseUrl } from '../../assets/Api.js/BaseUrl.jsx'
 
 export default function Register() {
   let[isLoading,setisLoding]=useState(false)
@@ -14,7 +15,7 @@ export default function Register() {
 
   async function sendValues(values){
     setisLoding(true)
-    let {data}=await axios.post('https://route-ecommerce.onrender.com/api/v1/auth/signup',values).catch(errors=>{
+    let {data}=await axios.post(`${BaseUrl}/auth/signup`,values).catch(errors=>{
       setisLoding(false)
       setApiError(errors.response.data.message)
     })

@@ -4,9 +4,9 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { cartContext } from '../../Context/CartContext.js';
+import { cartContext } from './src/Context/CartContext.js';
 import { toast } from 'react-hot-toast';
-import { BaseUrl } from '../../assets/Api.js/BaseUrl.jsx';
+import { BaseUrl } from './src/assets/Api/BaseUrl.jsx';
 export default function FeatureProducts() {
   let [products,setProducts]=useState([])
   let [list,setlist]=useState(18)
@@ -24,14 +24,15 @@ export default function FeatureProducts() {
   }
   let getProducts=async()=>{
   let {data}=await axios.get(`${BaseUrl}/products?page=2`)
+  // console.log(data)
   setProducts(data.data)
+  // console.log(products);
   }
  async function wishlist(id){
   let{data}=await addWishlist(id)
   
   if(data){
     setnumWishlist(data.data.length)
-   
     toast.success(data.message,{duration:1000,style:{color:'#0aad0a',borderRadius: '10px',
     background: '#330'},icon: '👏'})
   }

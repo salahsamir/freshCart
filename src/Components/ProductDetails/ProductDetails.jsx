@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import { cartContext } from '../../Context/CartContext.js';
 import { toast } from 'react-hot-toast';
 import { Helmet } from 'react-helmet';
+import { BaseUrl } from '../../assets/Api.js/BaseUrl.jsx';
 
 export default function ProductDetails() {
   let[details,setDetails]=useState(null)
@@ -32,7 +33,7 @@ export default function ProductDetails() {
     slidesToScroll: 1
   };
   let getdata=async(id)=>{
-  let {data}=  await axios.get(`https://route-ecommerce.onrender.com/api/v1/products/${id}`)
+  let {data}=  await axios.get(`${BaseUrl}/products/${id}`)
   setDetails(data.data)
   }
   useEffect(()=>{

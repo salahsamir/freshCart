@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { BaseUrl } from "../assets/Api.js/BaseUrl.jsx";
 
 export let cartContext=createContext()
 
@@ -28,7 +29,7 @@ export function CartContextProvider(props){
     },[])
     let headers={token:localStorage.getItem('token')}
     let addCart=(productId)=>{
-     return axios.post(`https://route-ecommerce.onrender.com/api/v1/cart`,{
+     return axios.post(`${BaseUrl}/cart`,{
             productId
         },{
             headers:headers
@@ -36,34 +37,34 @@ export function CartContextProvider(props){
     }
 
     let getCart=()=>{
-        return axios.get(`https://route-ecommerce.onrender.com/api/v1/cart`,{
+        return axios.get(`${BaseUrl}/cart`,{
                headers:headers
            }).then((res)=>res).catch((err)=>err)
        }
        let remove=(productId)=>{
-        return axios.delete(`https://route-ecommerce.onrender.com/api/v1/cart/${productId}`,{
+        return axios.delete(`${BaseUrl}/cart/${productId}`,{
                headers:headers
            }).then((res)=>res).catch((err)=>err)
        }
        let updateCount=(productId,count)=>{
-        return axios.put(`https://route-ecommerce.onrender.com/api/v1/cart/${productId}`,{count},{
+        return axios.put(`${BaseUrl}/cart/${productId}`,{count},{
                headers:headers
            }).then((res)=>res).catch((err)=>err)
        }
        let onlinePay=(cartId,shippingAddress)=>{
-        return axios.post(`https://route-ecommerce.onrender.com/api/v1/orders/checkout-session/${cartId}/?url=http://localhost:3000`,{shippingAddress},{
+        return axios.post(`${BaseUrl}/orders/checkout-session/${cartId}/?url=http://localhost:3000`,{shippingAddress},{
                headers:headers
            }).then((res)=>res).catch((err)=>err)
        }
        let addWishlist=(productId)=>{
-        return axios.post(`https://route-ecommerce.onrender.com/api/v1/wishlist`,{
+        return axios.post(`${BaseUrl}/wishlist`,{
                productId
            },{
                headers:headers
            }).then((res)=>res).catch((err)=>err)
        }
        let getWishlist=()=>{
-        return axios.get(`https://route-ecommerce.onrender.com/api/v1/wishlist`,{
+        return axios.get(`${BaseUrl}/wishlist`,{
                headers:headers
            }).then((res)=>res).catch((err)=>err)
        }
