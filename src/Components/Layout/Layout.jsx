@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Layout.module.css'
 import Navbar from '../Navbar/Navbar.jsx'
-import Footer from './../Footer/Footer.jsx';
+
 import { Outlet, useNavigate } from 'react-router-dom';
 
 export default function Layout({user,setuser}) {
@@ -22,7 +22,7 @@ export default function Layout({user,setuser}) {
    <Outlet/>
    </div>
    </div>
-   <Footer/>
+ 
    
    </>
   )
